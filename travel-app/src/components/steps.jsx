@@ -1,9 +1,19 @@
+import { useState } from 'react';
 import './steps.css';
 
 const messages = ['Learn React', 'Apply for jobs', 'Invest your new income'];
 
 export default function Steps() {
-  const step = 2;
+  const [step, setStep] = useState(1);
+
+  function handlePrevious() {
+    setStep(step - 1);
+  }
+
+  function handleNext() {
+    setStep(step + 1);
+  }
+
   return (
     <div>
       <div className="numbers">
@@ -16,8 +26,12 @@ export default function Steps() {
         Step {step}: {messages[step - 1]}
       </p>
       <div className="buttons">
-        <button className="button">Previous</button>
-        <button className="button">Next</button>
+        <button className="button" onClick={handlePrevious}>
+          Previous
+        </button>
+        <button className="button" onClick={handleNext}>
+          Next
+        </button>
       </div>
     </div>
   );
