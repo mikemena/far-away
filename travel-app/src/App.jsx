@@ -1,11 +1,13 @@
 import './App.css';
-import Steps from './components/steps';
+// import Steps from './components/steps';
+import Counter from './components/counter/counter';
 
 function App() {
   return (
     <>
       <div>
-        <Steps />
+        <Counter />
+        {/* <Steps /> */}
       </div>
     </>
   );
